@@ -1,5 +1,4 @@
 
-### Create a new user
 POST http://localhost:3000/reports
 content-type: application/json
 
@@ -13,3 +12,11 @@ content-type: application/json
   "price": 50000
 }
 
+
+### Approve an existing report
+PATCH http://localhost:3000/reports/6
+content-type: application/json
+
+{
+  "approved": true
+}
