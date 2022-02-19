@@ -23,6 +23,7 @@ const cookieSession = require('cookie-session');
           type: 'sqlite',
           database: config.get<string>('DB_NAME'),
           entities: [User, Report],
+          // NOTE: synchronize 若已經發布上生產, 需改回 false, 不建議使用 true, 因為 typeORM 會自動依據 entity 檔案同步刪除或新增資料庫, 若開發時不小心刪除了某欄位並上傳正式, 就會導致資料遺失
           synchronize: true,
         };
       },
